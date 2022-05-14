@@ -8,7 +8,7 @@ import org.bukkit.entity.Player;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.bukkit.scheduler.BukkitTask;
 
-public class PingCommand extends PulsarLibPlayerCommand{
+public class PingCommand extends PLPlayerCommand {
 
     private BukkitTask counterTask;
 
