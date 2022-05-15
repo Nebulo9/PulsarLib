@@ -85,11 +85,11 @@ public abstract class PLConfig {
         }
     }
 
-    public void writeInFile(String path,String contentJSON) {
+    public void writeInFile(String path,String content) {
         try {
             File file = new File(path);
             FileWriter fw = new FileWriter(file);
-            fw.write(contentJSON);
+            fw.write(content);
             fw.close();
         } catch (IOException e) {
             throw new RuntimeException(e);
