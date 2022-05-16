@@ -1,15 +1,16 @@
 package fr.nebulo9.pulsarlib.command;
 
+import fr.nebulo9.pulsarlib.PulsarLib;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public abstract class PLCommand implements CommandExecutor {
-    protected static JavaPlugin instance;
+    protected static JavaPlugin INSTANCE;
 
-    public PLCommand(JavaPlugin instance) {
-        this.instance = instance;
+    public PLCommand() {
+        INSTANCE = PulsarLib.getPlugin();
     }
 
     @Override

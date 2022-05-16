@@ -2,10 +2,6 @@ package fr.nebulo9.pulsarlib.task;
 
 import org.bukkit.scheduler.BukkitRunnable;
 
-import java.util.function.BiConsumer;
-import java.util.function.Consumer;
-import java.util.function.Function;
-
 public class CounterTask extends BukkitRunnable {
 
     private Runnable function;

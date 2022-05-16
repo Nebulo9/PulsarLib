@@ -7,8 +7,8 @@ import org.bukkit.entity.Player;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public abstract class PLPlayerCommand extends PLCommand {
-    public PLPlayerCommand(JavaPlugin instance) {
-        super(instance);
+    public PLPlayerCommand() {
+        super();
     }
 
     @Override

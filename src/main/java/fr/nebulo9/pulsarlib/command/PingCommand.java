@@ -12,8 +12,8 @@ public class PingCommand extends PLPlayerCommand {
 
     private BukkitTask counterTask;
 
-    public PingCommand(JavaPlugin instance) {
-        super(instance);
+    public PingCommand() {
+        super();
     }
 
     @Override
@@ -33,8 +33,13 @@ public class PingCommand extends PLPlayerCommand {
                     "."
             ));
             return true;
-        } else if(args.length == 2) {
-            int count = Integer.parseInt(args[1]);
+        } else {
+            int count;
+            try {
+                count = Integer.parseInt(args[1]);
+            } catch (NumberFormatException e) {
+                count = 0;
+            }
             if(checkArg(args,0,"count") && count != 0) {
                 counterTask = new CounterTask(count, () -> {
                     Message.playerMessage(sender,Message.build(
@@ -45,7 +50,7 @@ public class PingCommand extends PLPlayerCommand {
                             ColorCode.RESET.getChat(),
                             "."
                     ));
-                }).runTaskTimer(instance,0L,20L);
+                }).runTaskTimer(INSTANCE,0L,20L);
                 return true;
             } else if(checkArg(args,0,"stop")) {
                 if(counterTask.isCancelled() || counterTask == null) {
@@ -58,6 +63,5 @@ public class PingCommand extends PLPlayerCommand {
             }
             return false;
         }
-        return false;
     }
 }
