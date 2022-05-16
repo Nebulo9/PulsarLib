@@ -13,14 +13,14 @@ public final class PulsarLib {
 
     public static final String MINECRAFT_VERSION = "1.18.1";
 
-    private static JavaPlugin PLUGIN;
+    private static JavaPlugin INSTANCE;
 
     /**
      * Returns the plugin instance.
      * @return a <a href="https://hub.spigotmc.org/javadocs/spigot/org/bukkit/plugin/java/JavaPlugin.html">plugin</a>.
      */
     public static JavaPlugin getPlugin() {
-        return PLUGIN;
+        return INSTANCE;
     }
 
     /**
@@ -28,6 +28,6 @@ public final class PulsarLib {
      * @param plugin the <a href="https://hub.spigotmc.org/javadocs/spigot/org/bukkit/plugin/java/JavaPlugin.html">plugin</a> to assign.
      */
     public static void setPlugin(JavaPlugin plugin) {
-        PLUGIN = plugin;
+        INSTANCE = plugin;
     }
 }

@@ -68,6 +68,22 @@ public class SimplifiedLocation {
     }
 
     /**
+     * Returns the pitch.
+     * @return the <code>float</code> pitch.
+     */
+    private float getPitch() {
+        return pitch;
+    }
+
+    /**
+     * Returns the yaw.
+     * @return the <code>float</code> yaw.
+     */
+    private float getYaw() {
+        return yaw;
+    }
+
+    /**
      * Returns a <a href="https://hub.spigotmc.org/javadocs/spigot/org/bukkit/Location.html">Location</a> from the members of this class.
      * @return the <a href="https://hub.spigotmc.org/javadocs/spigot/org/bukkit/Location.html">Location</a> from the members of this class.
      */
