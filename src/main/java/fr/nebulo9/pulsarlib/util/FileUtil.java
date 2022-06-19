@@ -4,14 +4,12 @@ import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import fr.nebulo9.pulsarlib.message.Message;
 
-import java.io.File;
-import java.io.FileOutputStream;
-import java.io.FileWriter;
-import java.io.IOException;
+import java.io.*;
 import java.net.URL;
 import java.nio.channels.Channels;
 import java.nio.channels.FileChannel;
 import java.nio.channels.ReadableByteChannel;
+import java.util.Scanner;
 
 public class FileUtil {
 
@@ -76,6 +74,17 @@ public class FileUtil {
             fw.write(contentJSON);
             fw.close();
         } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    public static String readFromFile(File file) {
+        try {
+            StringBuilder sb = new StringBuilder();
+            Scanner sc = new Scanner(file);
+            sc.useDelimiter("\\Z");
+            return sc.next();
+        } catch (FileNotFoundException e) {
             throw new RuntimeException(e);
         }
     }

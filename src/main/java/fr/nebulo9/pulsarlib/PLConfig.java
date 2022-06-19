@@ -34,13 +34,8 @@ public abstract class PLConfig {
     }
 
     public void reloadConfig() {
-        try {
-            Message.logInfo("Loading config...");
-            FileReader fr = new FileReader(configFile);
-            values = GSON.fromJson(fr,new TypeToken<HashMap<String,Object>>(){}.getType());
-            Message.logInfo("Config loaded successfully");
-        } catch (FileNotFoundException e) {
-            throw new RuntimeException(e);
-        }
+        Message.logInfo("Loading config...");
+        values = GSON.fromJson(FileUtil.readFromFile(configFile),new TypeToken<HashMap<String,Object>>(){}.getType());
+        Message.logInfo("Config loaded successfully");
     }
 }
