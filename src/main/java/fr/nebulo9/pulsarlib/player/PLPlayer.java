@@ -4,7 +4,7 @@ import com.google.gson.annotations.Expose;
 
 import java.util.UUID;
 
-public class PLPlayer {
+public abstract class PLPlayer {
     protected final UUID uuid;
 
     @Expose(serialize = false)
