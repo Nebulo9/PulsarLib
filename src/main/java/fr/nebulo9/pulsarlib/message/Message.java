@@ -8,7 +8,7 @@ import org.bukkit.entity.Player;
 
 /**
  * <p>Provides method to send message to different recipient.</p>
- * @version 1.0
+ * @version 1.1
  * @author Nebulo9
  */
 public class Message {
