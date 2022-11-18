@@ -7,7 +7,7 @@ import fr.nebulo9.pulsarlib.message.Message;
 import fr.nebulo9.pulsarlib.util.FileUtil;
 import org.bukkit.plugin.java.JavaPlugin;
 
-import java.io.*;
+import java.io.File;
 import java.util.HashMap;
 
 public abstract class PLConfig {

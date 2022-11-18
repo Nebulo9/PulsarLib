@@ -5,7 +5,7 @@ import org.bukkit.plugin.java.JavaPlugin;
 /**
  * Represents the general <code>Manager</code> to extend to manage commands, listeners, etc.
  * @author Nebulo9
- * @version 1.0
+ * @version 1.1
  */
 public abstract class Manager {
     protected JavaPlugin instance;

@@ -1,7 +1,6 @@
 package fr.nebulo9.pulsarlib.player;
 
 import com.google.gson.annotations.Expose;
-import org.bukkit.Bukkit;
 
 import java.util.UUID;
 

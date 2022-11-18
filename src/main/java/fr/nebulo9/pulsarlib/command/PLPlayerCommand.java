@@ -4,7 +4,6 @@ import fr.nebulo9.pulsarlib.message.Message;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
-import org.bukkit.plugin.java.JavaPlugin;
 
 public abstract class PLPlayerCommand extends PLCommand {
     public PLPlayerCommand() {

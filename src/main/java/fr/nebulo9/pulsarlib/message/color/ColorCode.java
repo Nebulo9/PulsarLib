@@ -3,7 +3,7 @@ package fr.nebulo9.pulsarlib.message.color;
 /**
  * Lists in an enum the colors codes in chat, MOTD and JSON formats.
  * @author Nebulo9
- * @version 1.0
+ * @version 1.1
  */
 public enum ColorCode {
     DARK_RED("§4","\\u00A74","dark_red"),

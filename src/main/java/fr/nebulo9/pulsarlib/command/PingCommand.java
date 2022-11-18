@@ -5,7 +5,6 @@ import fr.nebulo9.pulsarlib.message.color.ColorCode;
 import fr.nebulo9.pulsarlib.task.CounterTask;
 import org.bukkit.command.Command;
 import org.bukkit.entity.Player;
-import org.bukkit.plugin.java.JavaPlugin;
 import org.bukkit.scheduler.BukkitTask;
 
 public class PingCommand extends PLPlayerCommand {

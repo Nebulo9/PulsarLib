@@ -3,16 +3,20 @@ package fr.nebulo9.pulsarlib.location;
 import com.google.gson.annotations.SerializedName;
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
+import org.bukkit.World.Environment;
+
+import java.util.Map;
 
 /**
  * <p>Represents a simplified version of the Bukkit <a href="https://hub.spigotmc.org/javadocs/spigot/org/bukkit/Location.html">Location</a>.</p>
  * <p>Contains the world name, the coordinates, the pitch and the yaw.</p>
  * @author Nebulo9
- * @version 1.0
+ * @version 1.1
  */
 public class SimplifiedLocation {
     @SerializedName("world")
     private String worldName;
+    private Environment env;
     private double x;
     private double y;
     private double z;
@@ -33,6 +37,16 @@ public class SimplifiedLocation {
         this.x = x;
         this.y = y;
         this.z = z;
+    }
+
+    public SimplifiedLocation(Location location) {
+        this.worldName = location.getWorld().getName();
+        this.env = location.getWorld().getEnvironment();
+        this.x = location.getX();
+        this.y = location.getY();
+        this.z = location.getZ();
+        this.pitch = location.getPitch();
+        this.yaw = location.getYaw();
     }
 
     /**
@@ -83,20 +97,15 @@ public class SimplifiedLocation {
         return yaw;
     }
 
+    private Environment getEnv() {
+        return env;
+    }
+
     /**
      * Returns a <a href="https://hub.spigotmc.org/javadocs/spigot/org/bukkit/Location.html">Location</a> from the members of this class.
      * @return the <a href="https://hub.spigotmc.org/javadocs/spigot/org/bukkit/Location.html">Location</a> from the members of this class.
      */
     public Location getLocation() {
         return new Location(Bukkit.getWorld(worldName),x,y,z);
-    }
-
-    /**
-     * Returns a <code>SimpleLocation</code> obtained with a <a href="https://hub.spigotmc.org/javadocs/spigot/org/bukkit/Location.html">Location</a> parameter.
-     * @param location the <a href="https://hub.spigotmc.org/javadocs/spigot/org/bukkit/Location.html">Location</a> to transform.
-     * @return the transformed <code>SimpleLocation</code>.
-     */
-    public static SimplifiedLocation simplify(Location location) {
-        return new SimplifiedLocation(location.getWorld().getName(), location.getX(), location.getY(), location.getZ(), location.getPitch(), location.getYaw());
     }
 }
