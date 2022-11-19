@@ -7,22 +7,15 @@ import org.bukkit.command.Command;
 import org.bukkit.entity.Player;
 import org.bukkit.scheduler.BukkitTask;
 
+import java.util.concurrent.Callable;
+import java.util.function.Supplier;
+
 public class PingCommand extends PLPlayerCommand {
 
     private BukkitTask counterTask;
 
     public PingCommand() {
         super();
-    }
-
-    @Override
-    public boolean checkArg(String[] args, int index, String value) {
-        return args[index].equalsIgnoreCase(value);
-    }
-
-    @Override
-    public boolean checkArg(String[] args, int index) {
-        return false;
     }
 
     @Override
@@ -44,7 +37,7 @@ public class PingCommand extends PLPlayerCommand {
             } catch (NumberFormatException e) {
                 count = 0;
             }
-            if(checkArg(args,0,"count") && count != 0) {
+            if(args[0].equalsIgnoreCase("count") && count != 0) {
                 counterTask = new CounterTask(count, () -> {
                     Message.playerMessage(sender,Message.build(
                             "Your ping: ",
@@ -56,7 +49,7 @@ public class PingCommand extends PLPlayerCommand {
                     ));
                 }).runTaskTimer(INSTANCE,0L,20L);
                 return true;
-            } else if(checkArg(args,0,"stop")) {
+            } else if(args[0].equalsIgnoreCase("stop")) {
                 if(counterTask.isCancelled() || counterTask == null) {
                     Message.playerErrorMessage(sender,"There is no ping session to stop.");
                     return false;
