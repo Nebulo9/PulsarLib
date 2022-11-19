@@ -1,6 +1,6 @@
 name: PulsarLib
 version: '${project.version}'
 main: fr.nebulo9.pulsarlib.PulsarLib
-api-version: 1.18
+api-version: 1.19
 authors: [ Nebulo9 ]
 description: The library I use for my Spigot Plugins
