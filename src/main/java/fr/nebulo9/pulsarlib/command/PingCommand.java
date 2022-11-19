@@ -21,6 +21,11 @@ public class PingCommand extends PLPlayerCommand {
     }
 
     @Override
+    public boolean checkArg(String[] args, int index) {
+        return false;
+    }
+
+    @Override
     public boolean PLPExecute(Player sender, Command command, String[] args) {
         if(args.length == 0) {
             Message.playerMessage(sender,Message.build(
