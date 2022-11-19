@@ -25,6 +25,8 @@ public abstract class PLCommand implements CommandExecutor {
 
     public abstract boolean checkArg(String[] args, int index, String value);
 
+    public abstract boolean checkArg(String[] args, int index);
+
     /**
      * The method that will be called in <a href="https://hub.spigotmc.org/javadocs/spigot/org/bukkit/command/CommandExecutor.html#onCommand(org.bukkit.command.CommandSender,org.bukkit.command.Command,java.lang.String,java.lang.String%5B%5D)">onCommand()</a> method.
      * @param sender the <a href="CommandSender">CommandSender</a> that type the command.
