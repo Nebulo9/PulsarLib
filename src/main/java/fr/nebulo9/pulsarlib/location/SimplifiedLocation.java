@@ -5,6 +5,7 @@ import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.World.Environment;
 
+import java.util.HashMap;
 import java.util.Map;
 
 /**
@@ -85,7 +86,7 @@ public class SimplifiedLocation {
      * Returns the pitch.
      * @return the <code>float</code> pitch.
      */
-    private float getPitch() {
+    public float getPitch() {
         return pitch;
     }
 
@@ -93,12 +94,20 @@ public class SimplifiedLocation {
      * Returns the yaw.
      * @return the <code>float</code> yaw.
      */
-    private float getYaw() {
+    public float getYaw() {
         return yaw;
     }
 
-    private Environment getEnv() {
+    public Environment getEnv() {
         return env;
+    }
+
+    public Map<String,Double> distance(SimplifiedLocation target) {
+        Map<String,Double> map = new HashMap<>();
+        map.put("distance",this.getLocation().distance(target.getLocation()));
+        map.put("diffX",target.getX() - this.x);
+        map.put("diffZ",target.getZ() - this.z);
+        return map;
     }
 
     /**
